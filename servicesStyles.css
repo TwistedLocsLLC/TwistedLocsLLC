@@ -1,0 +1,153 @@
+﻿
+body {
+    font-family: 'Montserrat', sans-serif; /* A more stylish font choice */
+    line-height: 1.6;
+    margin: 0;
+    background-color: #122020;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+}
+
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    nav h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    nav li {
+        margin-left: 1rem;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+        nav a:hover {
+            background-color: #ffa07a;
+        }
+
+main {
+    padding: 2rem 0;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+    section h2 {
+        font-size: 2rem;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+.btn {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+}
+
+    .btn:hover {
+        background-color: #122020;
+    }
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+/* ... (unchanged styles) ... */
+
+/* Additional CSS for the Image Gallery Section */
+#gallery {
+    background-color: #122020;
+    padding: 2rem 0;
+    /**background-image: url("twisted locs logo.jpg"); /* Add the path to your background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.work-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.services-list {
+    flex: 1;
+    max-width: 40%;
+    color: #fff;
+}
+
+    .services-list h3 {
+        font-size: 1.5rem;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    .services-list ul {
+        list-style: none;
+        padding-left: 0;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    .services-list li {
+        margin-bottom: 1rem;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+.images {
+    flex: 1;
+    display: grid; /* Use grid layout for the images */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Create a responsive grid */
+    gap: 1rem; /* Add a gap between images */
+    justify-items: flex-end; /* Align images to the right */
+}
+
+    .images img {
+        max-width: 100%; /* Images will take the full width of their grid cell */
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+

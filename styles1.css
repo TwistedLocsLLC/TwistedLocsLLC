@@ -1,0 +1,93 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    background-color: #122020;
+}
+header {
+    background-color: #122020;
+    color: #fff;
+    padding: 1rem 0;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    nav h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    nav li {
+        margin-left: 1rem;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+        nav a:hover {
+            background-color: #122020;
+        }
+
+.cover-container {
+    width: 100%;
+    height: 100vh; /* Make the container cover the entire viewport height */
+}
+
+.cover-wrapper {
+    position: relative;
+    height: calc(100vh * 6); /* Adjust the height based on the number of cover images */
+}
+
+    .cover-wrapper img {
+        width: 100%;
+        height: 100vh; /* Make each image cover the entire viewport height */
+        border:none
+    }
+
+.centered-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s ease;
+}
+
+    .centered-button a {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #122020;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Optional: Add styles to the clickable button on hover or active state */
+        .centered-button a:hover,
+        .centered-button a:active {
+            background-color: #000000;
+        }
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

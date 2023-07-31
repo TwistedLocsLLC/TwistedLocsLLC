@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwistedLocsLLC Booking</title>
+    <link rel="stylesheet" href="bookingStyles.css"> <!-- Link to the separate CSS file -->
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+</head>
+<body>
+    <div>
+        <header>
+            <nav>
+                <div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
+    </div>
+
+    <div class="booking-container">
+
+        <h2>Book an Appointment</h2>
+        <h3>Business number: +1 (229) 454-3849</h3>
+        <form>
+            <div class="input-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="number">Contact Number</label>
+                <input type="tel" id="number" name="number" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="hairstyle">Hair Style</label>
+                <select id="hairstyle" name="hairstyle">
+                    <option value="" disabled selected>Select Hair Style</option>
+                     <option value="Crochet styles $65">Crochet styles $65</option>
+                    <option value="Scalp braids no weave $45">Scalp braids no weave $45</option>
+                    <option value="Plaits no weave $40">Plaits no weave $40</option>
+                    <option value="Faux locs $100">Faux locs $100</option>
+                    <option value="Kids starter locs $70">Kids starter locs $70</option>
+                    <option value="Retwist kids $50 (ages 1-14 comes with free style)">
+                        Retwist kids $50 (ages 1-14 comes with free style)
+                    </option>
+                    <option value="retwist $85">retwist $85</option>
+                    <option value="retwist w/ style $100">retwist w/ style $100</option>
+                    <option value="starter locs $100 (short hair to shoulder length)">starter locs $100 (short hair to shoulder length)</option>
+                    <option value="Starter locs $125 (on longer hair)">Starter locs $125 (on longer hair)</option>
+                    <option value="Triangle plaits no weave $50">Triangle plaits no weave $50</option>
+                    <option value="Loc extensions $400">Loc extensions $400</option>
+                    <option value="Instant locs (prices varies on hair texture)">Instant locs (prices varies on hair texture)</option>
+                    <option value="Micro locs start at $600+ (depending on length)">Micro locs start at $600+ (depending on length)</option>
+                    <option value="Micro loc retie $125">Micro loc retie $125</option>
+                    <option value="Hair oil $8, $10, $20">Hair oil $8, $10, $20</option>
+                    <!-- Add more options for hair styles -->
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="styleDetails">Style Details</label>
+                <input type="text" id="styleDetail" name="styleDetails">
+            </div>
+            <div class="input-group">
+                <label for="time">Desired Time (9am-8pm, mon-fri)</label>
+                <input type="datetime-local" id="time" name="time">
+            </div>
+            <button type="submit" class="booking-btn" id="bookingButton">Book Appointment!</button>
+        </form>
+
+    </div>
+    <div id="bookingRules">
+        <ul>
+            <h2>Booking Rules</h2>
+            <h3>Deposits</h3>
+            <li><h4>25% deposit required at time of booking.</h4></li>
+            <h3>Traveling</h3>
+            <li><h4>There is a travel fee for all offsite locations.</h4></li>
+            <h3>Late Arrivals</h3>
+            <li><h4>Clients will be given a 15 minute grace period. Beyond that time you must reschedule and pay a $30 late fee.</h4></li>
+            <h3>Reschedule</h3>
+            <li><h4>Only one reschedule allowed for your deposit to be transferred.</h4></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy;  TwistedLocs LLC. All rights reserved.</p>
+
+        </div>
+    </footer>
+</body>
+<script>
+// Initialize Parse
+    Parse.initialize("8YdbJNeRFqX6dtkW1OIVEJDm3fewteLAgs280vdc", "PBk3YOGZqLNxhLZDk3baM5TUDlBbAzikstA9Rdhp"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+    Parse.serverURL = "https://parseapi.back4app.com/";
+
+
+async function sendInquiry() {
+
+  const Inquiry = Parse.Object.extend("Bookings");
+  const inquiry = new Inquiry();
+
+    inquiry.set("name", document.getElementById("name").value);
+    inquiry.set("number", document.getElementById("number").value);
+    inquiry.set("email", document.getElementById("email").value);
+    inquiry.set("hairstyle", document.getElementById("hairstyle").value);
+    inquiry.set("styleDetail", document.getElementById("styleDetail").value);
+    inquiry.set("desiredTime", document.getElementById("time").value);
+
+    inquiry.save()
+    .then((inquiry) => {
+    // Execute any logic that should take place after the object is saved.
+    alert('Sent, pending, you will be emailed to confirm: ' + inquiry.id);
+    }, (error) => {
+    // Execute any logic that should take place if the save fails.
+    // error is a Parse.Error with an error code and message.
+    alert('Failed to book, with error code: ' + error.message);
+    });
+}
+
+// Add on click listener to call the create parse user function
+document.getElementById("bookingButton").addEventListener("click", async function () {
+  sendInquiry();
+});
+</script>
+</html>

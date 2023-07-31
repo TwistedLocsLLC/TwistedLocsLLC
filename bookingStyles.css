@@ -1,0 +1,129 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #122020;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+nav {
+    
+    list-style: none;
+    background-color: #0000;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+    nav h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+        display: inline;
+    }
+
+    nav li {
+       
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+        display: inline;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-family: 'Pacifico', cursive; /* Playful font for the salon name */
+    }
+
+        nav a:hover {
+            background-color: #122020;
+        }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.booking-container {
+    background-color: #111;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    text-align: center;
+}
+
+    .booking-container h2 {
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+    .input-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="tel"],
+    .input-group input[type="email"],
+    .input-group select,
+    .input-group input[type="datetime-local"] {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #122020;
+        background-color: #122020;
+        color: #fff;
+        transition: border-color 0.3s ease;
+    }
+
+        .input-group input[type="text"]:focus,
+        .input-group input[type="tel"]:focus,
+        .input-group input[type="email"]:focus,
+        .input-group select:focus,
+        .input-group input[type="datetime-local"]:focus {
+            outline: none;
+            border-color: #fff;
+        }
+
+.booking-btn {
+    background-color: #122020;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .booking-btn:hover {
+        background-color: #111;
+    }
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
